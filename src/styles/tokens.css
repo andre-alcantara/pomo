@@ -1,0 +1,50 @@
+:root {
+  /* Colors — palette */
+  --color-terracotta: #e25822;
+  --color-ink: #341206;
+  --color-sienna: #8c3513;
+  --color-emerald: #21c55b;
+  --color-cobalt: #0023aa;
+  --color-pewter: #a2a29f;
+  --color-cream: #f2eee4;
+  --color-cream-soft: rgba(241, 240, 227, 0.8);
+  --color-graphite-strong: rgba(204, 203, 186, 0.4);
+  --color-graphite-medium: rgba(204, 203, 186, 0.3);
+  --color-graphite-soft: rgba(204, 203, 186, 0.2);
+  --color-graphite-faint: rgba(204, 203, 186, 0.12);
+
+  /* Colors — semantic */
+  --color-surface: var(--color-cream);
+
+  /* Typography */
+  --font-display: 'PP Acma', serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Spacing */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 40px;
+  --space-2xl: 80px;
+
+  /* Radii */
+  --radius-button: 999px;
+  --radius-card: 8px;
+  --radius-icon-button: 8px;
+
+  /* Motion */
+  --duration-fast: 200ms;
+  --duration-normal: 400ms;
+  --duration-slow: 600ms;
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/*
+  Breakpoints (Tailwind scale — use values directly in @media queries)
+  sm:  640px
+  md:  768px  ← desktop/mobile threshold
+  lg:  1024px
+  xl:  1280px
+  2xl: 1536px
+*/
