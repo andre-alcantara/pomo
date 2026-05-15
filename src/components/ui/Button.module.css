@@ -1,0 +1,122 @@
+.button {
+  /* Reset */
+  border: none;
+  cursor: pointer;
+  appearance: none;
+  outline: none;
+  position: relative;   /* anchor for absolutely-positioned labels */
+  overflow: hidden;     /* clip labels as they slide in/out */
+
+  /* Layout */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+
+  /* Dimensions — medium active (default) */
+  width: 448px;
+  max-width: 100%;
+  height: 64px;
+  border-radius: 20px;
+
+  /* Typography — set here so font-size: inherit in .label resolves per size */
+  font-size: 16px;
+
+  /* Effect */
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+
+  /* Only color transitions via CSS — dimensions are Motion-animated */
+  transition: background-color 120ms ease-out;
+}
+
+/* ── Label ───────────────────────────────────── */
+
+.label {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: inherit;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+/* ── Size: small ─────────────────────────────── */
+
+.small {
+  height: 56px;
+  border-radius: 16px;
+  font-size: 14px;
+}
+
+/* ── Pressed state ───────────────────────────── */
+
+.isPressed {
+  width: 444px;
+  height: 60px;
+  border-radius: 20px;
+}
+
+.small.isPressed {
+  height: 52px;
+}
+
+/* ── Variant: start ──────────────────────────── */
+
+.start {
+  background-color: var(--color-terracotta);
+}
+
+.start .label {
+  color: var(--color-cream);
+}
+
+.start.isPressed {
+  background-color: var(--color-terracotta-soft);
+}
+
+/* ── Variant: resume ─────────────────────────── */
+
+.resume {
+  background-color: var(--color-ink);
+}
+
+.resume .label {
+  color: var(--color-cream);
+}
+
+/* ── Variant: pause ──────────────────────────── */
+
+.pause {
+  background-color: var(--color-graphite-medium);
+}
+
+.pause .label {
+  color: var(--color-ink);
+}
+
+.pause.isPressed {
+  background-color: var(--color-graphite-soft);
+}
+
+/* ── Variant: reset ──────────────────────────── */
+
+.reset {
+  background-color: transparent;
+}
+
+.reset .label {
+  color: var(--color-ink);
+}
+
+/* ── Disabled ────────────────────────────────── */
+
+.isDisabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}

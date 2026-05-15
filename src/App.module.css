@@ -1,0 +1,13 @@
+.root {
+  position: fixed;
+  /* pin the container's centerline at: 40px margin + 32px (half of 64px button) = 72px */
+  bottom: 72px;
+  height: 0;
+  overflow: visible;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 var(--space-md);
+}
