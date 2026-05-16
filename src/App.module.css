@@ -7,7 +7,26 @@
   left: 0;
   right: 0;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  padding: 0 var(--space-md);
+  padding: 0 40px;
+}
+
+/* Fixed-size slot keeps the button centered while it shrinks on press */
+.iconSlot {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.themeDot {
+  /* color type: atom has 6px inner padding → dot fills 36×36 */
+  display: block;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: var(--color-ink);
 }

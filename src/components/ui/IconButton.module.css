@@ -1,0 +1,81 @@
+.button {
+  /* Reset */
+  border: none;
+  cursor: pointer;
+  appearance: none;
+  outline: none;
+  overflow: hidden;
+
+  /* Layout */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+
+  /* Dimensions — medium active (default) */
+  width: 64px;
+  height: 64px;
+  border-radius: 20px;
+
+  /* Typography — font-size: inherit in .content resolves per size */
+  font-size: 16px;
+
+  /* Colors */
+  background-color: var(--color-graphite-soft);
+  color: var(--color-ink);
+
+  /* Effect */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  /* Only color transitions via CSS — dimensions are Motion-animated */
+  transition: background-color 120ms ease-out;
+}
+
+/* ── Content ──────────────────────────────── */
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* fills the padded interior: 64px - 2×8px = 48px */
+  width: 48px;
+  height: 48px;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: inherit;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  color: inherit;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* ── Size: small ─────────────────────────── */
+
+.small {
+  padding: 6px;
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  font-size: 14px;
+}
+
+.small .content {
+  /* fills the padded interior: 56px - 2×6px = 44px */
+  width: 44px;
+  height: 44px;
+}
+
+/* ── Pressed state ───────────────────────── */
+
+.isPressed {
+  background-color: var(--color-graphite-strong);
+}
+
+/* ── Disabled ────────────────────────────── */
+
+.isDisabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}

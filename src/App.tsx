@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Button, { type ButtonVariant } from './components/ui/Button';
+import IconButton from './components/ui/IconButton';
 import styles from './App.module.css';
 
 const VARIANTS: ButtonVariant[] = ['start', 'pause', 'resume', 'reset'];
@@ -20,9 +21,31 @@ export default function App() {
 
   return (
     <div className={styles.root}>
+      <div className={styles.iconSlot}>
+        <IconButton aria-label="Settings">
+          {/* icon type: atom has 8px inner padding → icon fills 32×32 */}
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+            <circle cx="16" cy="16" r="12" stroke="currentColor" strokeWidth="2" />
+            <path
+              d="M16 10v6l4 4"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </IconButton>
+      </div>
+
       <Button variant={variant} onClick={cycle}>
         {LABELS[variant]}
       </Button>
+
+      <div className={styles.iconSlot}>
+        <IconButton aria-label="Theme">
+          <span className={styles.themeDot} />
+        </IconButton>
+      </div>
     </div>
   );
 }
