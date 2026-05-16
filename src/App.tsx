@@ -42,7 +42,7 @@ export default function App() {
           <IconButton aria-label="Subtract 5 minutes">-5</IconButton>
         </div>
 
-        <TimerDisplay />
+        <TimerDisplay color={theme.color} />
 
         <div className={styles.iconSlot}>
           <IconButton aria-label="Add 5 minutes">+5</IconButton>
