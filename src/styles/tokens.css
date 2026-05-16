@@ -2,7 +2,7 @@
   /* Colors — palette */
   --color-terracotta: #e25822;
   --color-terracotta-soft: #E46634;
-  --color-ink: #341206;
+  --color-ink: #000000;
   --color-sienna: #8c3513;
   --color-emerald: #21c55b;
   --color-cobalt: #0023aa;
@@ -42,10 +42,11 @@
 }
 
 /*
-  Breakpoints (Tailwind scale — use values directly in @media queries)
+  Breakpoints (Tailwind scale + custom 3xl — use values directly in @media queries)
   sm:  640px
-  md:  768px  ← desktop/mobile threshold
+  md:  768px   ← desktop/mobile threshold
   lg:  1024px
   xl:  1280px
   2xl: 1536px
+  3xl: 2500px  ← layout/content max-width cap for ultra-wide screens
 */

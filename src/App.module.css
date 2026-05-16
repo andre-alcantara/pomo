@@ -1,18 +1,46 @@
-.root {
+/* ── Timer row ─────────────────────────────────────────────── */
+/* Full viewport, icon buttons at the edges, timer fills center */
+
+.timerRow {
   position: fixed;
-  /* pin the container's centerline at: 40px margin + 32px (half of 64px button) = 72px */
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 2500px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  pointer-events: none;
+}
+
+.timerRow > * {
+  pointer-events: all;
+}
+
+/* ── Control bar ───────────────────────────────────────────── */
+/* Centerline pinned at: 40px margin + 32px (half of 64px) = 72px from bottom */
+
+.controlBar {
+  position: fixed;
   bottom: 72px;
   height: 0;
   overflow: visible;
-  left: 0;
-  right: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 2500px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 40px;
 }
 
-/* Fixed-size slot keeps the button centered while it shrinks on press */
+/* ── Shared: icon slot ─────────────────────────────────────── */
+/* Fixed-size wrapper keeps the button centered while it shrinks on press */
+
 .iconSlot {
   width: 64px;
   height: 64px;
@@ -21,6 +49,8 @@
   justify-content: center;
   flex-shrink: 0;
 }
+
+/* ── Theme dot ─────────────────────────────────────────────── */
 
 .themeDot {
   display: block;
