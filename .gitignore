@@ -28,4 +28,7 @@ dist-ssr
 .env.local
 .env.*.local
 
+# Licensed fonts — not redistributed
+public/fonts/PPAcma-Book.woff2
+
 CLAUDE.md
