@@ -11,12 +11,26 @@ const LABELS: Record<ButtonVariant, string> = {
   reset: 'RESET',
 };
 
+const THEMES = [
+  { key: 'ink',     hex: '#341206' },
+  { key: 'cobalt',  hex: '#0023AA' },
+  { key: 'sienna',  hex: '#8C3513' },
+  { key: 'emerald', hex: '#21C55B' },
+] as const;
+
 export default function App() {
   const [index, setIndex] = useState(0);
+  const [themeIndex, setThemeIndex] = useState(0);
+
   const variant = VARIANTS[index];
+  const theme = THEMES[themeIndex];
 
   function cycle() {
     setIndex((i) => (i + 1) % VARIANTS.length);
+  }
+
+  function cycleTheme() {
+    setThemeIndex((i) => (i + 1) % THEMES.length);
   }
 
   return (
@@ -42,8 +56,8 @@ export default function App() {
       </Button>
 
       <div className={styles.iconSlot}>
-        <IconButton aria-label="Theme">
-          <span className={styles.themeDot} />
+        <IconButton aria-label="Theme" onClick={cycleTheme}>
+          <span className={styles.themeDot} style={{ backgroundColor: theme.hex }} />
         </IconButton>
       </div>
     </div>
