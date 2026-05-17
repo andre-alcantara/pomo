@@ -10,7 +10,7 @@
   font-family: var(--font-display);
   font-weight: 400;
   /* scales from 500px at 1440px viewport, capped at 500px */
-  font-size: clamp(150px, 34.72vw, 800px);
+  font-size: clamp(150px, 35vw, 800px);
   letter-spacing: -0.04em;
   line-height: 1;
   color: var(--color-ink);

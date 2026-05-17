@@ -1,3 +1,14 @@
+/* ── Logo ──────────────────────────────────────────────────── */
+
+.logoSlot {
+  position: fixed;
+  top: 40px;
+  /* tracks the left edge of the 2500px layout container + 40px padding:
+     calc(50% - 1250px + 40px) = calc(50% - 1210px)
+     max() keeps it at 40px on narrower screens */
+  left: max(40px, calc(50% - 1210px));
+}
+
 /* ── Timer row ─────────────────────────────────────────────── */
 /* Full viewport, icon buttons at the edges, timer fills center */
 

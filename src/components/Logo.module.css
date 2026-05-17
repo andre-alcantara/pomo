@@ -1,0 +1,17 @@
+.brand,
+.light,
+.symbol {
+  display: block;
+  cursor: pointer;
+}
+
+.brand,
+.light {
+  width: 96px;
+  height: 23px;
+}
+
+.symbol {
+  width: 24px;
+  height: 24px;
+}

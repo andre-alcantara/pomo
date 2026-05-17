@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Button, { type ButtonVariant } from './components/ui/Button';
 import IconButton from './components/ui/IconButton';
 import TimerDisplay from './components/TimerDisplay';
+import Logo from './components/Logo';
 import styles from './App.module.css';
 
 const VARIANTS: ButtonVariant[] = ['start', 'pause', 'resume', 'reset'];
@@ -36,6 +37,10 @@ export default function App() {
 
   return (
     <>
+      <div className={styles.logoSlot}>
+        <Logo />
+      </div>
+
       {/* Timer row — vertically centered in viewport */}
       <div className={styles.timerRow}>
         <div className={styles.iconSlot}>
