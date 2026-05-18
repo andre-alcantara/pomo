@@ -4,6 +4,9 @@ import IconButton from './components/ui/IconButton';
 import TimerDisplay from './components/TimerDisplay';
 import Logo from './components/Logo';
 import HeaderCopy from './components/HeaderCopy';
+import { useTimerState } from './timer/useTimerState';
+import { useTimerActions } from './timer/useTimerActions';
+import { MIN_FOCUS_MS, MAX_FOCUS_MS } from './timer/reducer';
 import styles from './App.module.css';
 
 const VARIANTS: ButtonVariant[] = ['start', 'pause', 'resume', 'reset'];
@@ -25,8 +28,14 @@ export default function App() {
   const [index, setIndex] = useState(0);
   const [themeIndex, setThemeIndex] = useState(0);
 
+  const { focusDurationMs, status } = useTimerState();
+  const { addFive, subtractFive } = useTimerActions();
+
   const variant = VARIANTS[index];
   const theme = THEMES[themeIndex];
+
+  const subtractFiveDisabled = status !== 'idle' || focusDurationMs <= MIN_FOCUS_MS;
+  const addFiveDisabled = focusDurationMs >= MAX_FOCUS_MS;
 
   function cycle() {
     setIndex((i) => (i + 1) % VARIANTS.length);
@@ -46,13 +55,25 @@ export default function App() {
       {/* Timer row — vertically centered in viewport */}
       <div className={styles.timerRow}>
         <div className={styles.iconSlot}>
-          <IconButton aria-label="Subtract 5 minutes">-5</IconButton>
+          <IconButton
+            aria-label="Subtract 5 minutes"
+            disabled={subtractFiveDisabled}
+            onClick={subtractFive}
+          >
+            -5
+          </IconButton>
         </div>
 
-        <TimerDisplay color={theme.color} />
+        <TimerDisplay remainingMs={focusDurationMs} color={theme.color} />
 
         <div className={styles.iconSlot}>
-          <IconButton aria-label="Add 5 minutes">+5</IconButton>
+          <IconButton
+            aria-label="Add 5 minutes"
+            disabled={addFiveDisabled}
+            onClick={addFive}
+          >
+            +5
+          </IconButton>
         </div>
       </div>
 

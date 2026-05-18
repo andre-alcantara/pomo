@@ -6,15 +6,38 @@
   justify-content: center;
 }
 
+/* Flex row so overflow:hidden on minutesWrapper doesn't corrupt the CSS
+   inline-block baseline, and tabular-nums keeps digit widths stable so
+   :00 never shifts when minutes change. */
 .numeral {
+  display: flex;
+  align-items: flex-end;
   font-family: var(--font-display);
   font-weight: 400;
-  /* scales from 500px at 1440px viewport, capped at 500px */
   font-size: clamp(150px, 35vw, 800px);
+  font-variant-numeric: tabular-nums;
   letter-spacing: -0.04em;
   line-height: 1;
   color: var(--color-ink);
   transition: color 200ms ease;
   white-space: nowrap;
   user-select: none;
+}
+
+/* ── Minutes (animated) ───────────────────────── */
+
+.minutesWrapper {
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.minutesValue {
+  display: block;
+}
+
+/* ── Colon + seconds (static) ─────────────────── */
+
+.colonSeconds {
+  flex-shrink: 0;
 }
