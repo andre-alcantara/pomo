@@ -1,12 +1,21 @@
-/* ── Logo ──────────────────────────────────────────────────── */
+/* ── Header ────────────────────────────────────────────────── */
+/* Single flex row so Logo and HeaderCopy share the same vertical center.
+   HeaderCopy drives the height (64px); top is offset so the logo's top
+   edge stays at 40px: top = 40 - (64 - 23) / 2 ≈ 19.5px            */
 
-.logoSlot {
+.header {
   position: fixed;
-  top: 40px;
-  /* tracks the left edge of the 2500px layout container + 40px padding:
-     calc(50% - 1250px + 40px) = calc(50% - 1210px)
-     max() keeps it at 40px on narrower screens */
+  top: calc(40px - (64px - 23px) / 2);
   left: max(40px, calc(50% - 1210px));
+  right: max(40px, calc(50% - 1210px));
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  pointer-events: none;
+}
+
+.header > * {
+  pointer-events: all;
 }
 
 /* ── Timer row ─────────────────────────────────────────────── */

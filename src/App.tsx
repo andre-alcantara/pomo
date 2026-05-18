@@ -3,6 +3,7 @@ import Button, { type ButtonVariant } from './components/ui/Button';
 import IconButton from './components/ui/IconButton';
 import TimerDisplay from './components/TimerDisplay';
 import Logo from './components/Logo';
+import HeaderCopy from './components/HeaderCopy';
 import styles from './App.module.css';
 
 const VARIANTS: ButtonVariant[] = ['start', 'pause', 'resume', 'reset'];
@@ -37,8 +38,9 @@ export default function App() {
 
   return (
     <>
-      <div className={styles.logoSlot}>
+      <div className={styles.header}>
         <Logo />
+        <HeaderCopy copy="START YOUR CYCLE" />
       </div>
 
       {/* Timer row — vertically centered in viewport */}

@@ -1,0 +1,59 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  height: 64px;
+}
+
+/* ── Copy text ────────────────────────────────── */
+
+.copy {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  white-space: nowrap;
+  color: var(--color-terracotta);
+  flex-shrink: 0;
+}
+
+.copy.light {
+  color: var(--color-cream);
+}
+
+.copy.small {
+  font-size: 14px;
+}
+
+/* ── Decorative indicator ─────────────────────── */
+
+.indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+  width: 15px;
+  height: 48px;
+  flex-shrink: 0;
+}
+
+.line {
+  height: 2px;
+  width: 100%;
+  background: var(--color-graphite-strong);
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.lineAccent {
+  height: 4px;
+  width: 18px;
+  background: var(--color-terracotta);
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.lineAccent.light {
+  background: var(--color-cream);
+}
